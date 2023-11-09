@@ -1,68 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Slider</title>
     <style>
- .slider-container {
-            width: 450px;
+        body{
+            background: linear-gradient(315deg, purple 30%, red);
+            background-repeat: repeat-x;
+            overflow: hidden;
+        }
+        .slider-container {
+            width: 70%;
             overflow: hidden;
             position: relative;
+            margin: 30px auto;
+            border-radius: 8px;
         }
 
         .slider {
             display: flex;
-            /* margin: 10px 25px;  */
             transition: transform 0.5s ease-in-out;
         }
 
 
         .slide {
             width: 1000px;
-            /* flex-shrink: 0; */
-            display: flex;
-            /* padding:60px; */
-            
-            justify-content: center;
-            align-items: center;
-            margin: 25px; 
         }
 
         .slide img {
-            /* margin: 10px 25px; */
-           width:1000px;
-           height:400px;
+            width: 1100px;
+            height: 550px;
+            object-fit: cover;
         }
 
-        .prev, .next {
+        .prev,
+        .next {
             cursor: pointer;
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: #fff;
+            background: transparent;
+            color: white;
             padding: 10px;
             border: none;
+            font-size: 60px;
         }
 
         .prev {
-            left: 0;
+            left: 10%;
         }
 
         .next {
-            right: 0;
+            right: 10%;
         }
-
     </style>
 </head>
+
 <body>
     <div class="slider-container">
         <div class="slider">
-            <div class="slide"><img src="https://img.freepik.com/premium-photo/pink-lotus-flower-middle-pond-with-cyan-water-warm-lighting_692702-17716.jpg?size=626&ext=jpg
-                " alt="Image 1"></div>
-            <div class="slide"><img src="https://img.freepik.com/premium-photo/pink-lotus-flower-middle-pond-with-cyan-water-warm-lighting_692702-17716.jpg?size=626&ext=jpg" alt="Image 2"></div>
-            <div class="slide"><img src="image3.jpghttps://img.freepik.com/free-photo/nature-flower-bloom-bouquet-background-romance-plant-decoration-generative-ai_188544-8985.jpg?size=626&ext=jpg" alt="Image 3"></div>
+            <div class="slide">
+                <img src="https://wallpapercave.com/wp/wp5501291.jpg" alt="Image 1">
+            </div>
+            <div class="slide">
+                <img src="https://wallpapercave.com/wp/wp3355278.jpg" alt="Image 2">
+            </div>
+            <div class="slide">
+                <img src="https://vitrina.ai/wp-content/uploads/2023/10/digest-banner-9-1.jpg" alt="Image 3">
+            </div>
         </div>
     </div>
     <button class="prev" onclick="prevSlide()">&#8249;</button>
@@ -74,7 +81,7 @@
         let currentIndex = 0;
 
         function showSlide(index) {
-            slider.style.transform = `translateX(-${(index * 450) + (index * 50)}px)`;
+            slider.style.transform = `translateX(-${(index * 1000) + (index * 50)}px)`;
         }
 
         function nextSlide() {
@@ -91,6 +98,7 @@
         showSlide(currentIndex);
     </script>
 </body>
+
 </html>
 <!-- https://img.freepik.com/premium-photo/pink-lotus-flower-middle-pond-with-cyan-water-warm-lighting_692702-17716.jpg?size=626&ext=jpg -->
 
